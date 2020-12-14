@@ -1,4 +1,4 @@
-package tasks;
+package tasks.task;
 
 
 import org.junit.jupiter.api.BeforeAll;

@@ -1,8 +1,9 @@
-package tasks;
+package tasks.task;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import tasks.iterator.MultiTaskIterator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Data
-public class MultiTask implements Task {
+public class MultiTask implements Task, Iterable<SimpleTask> {
     private String header;
     private String body;
     private List<Task> tasks;
@@ -45,5 +46,11 @@ public class MultiTask implements Task {
             leadTime += task.getLeadTime();
         
         return leadTime;
+    }
+    
+    
+    @Override
+    public MultiTaskIterator iterator() {
+        return new MultiTaskIterator(this);
     }
 }

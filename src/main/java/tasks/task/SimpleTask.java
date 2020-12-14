@@ -1,4 +1,4 @@
-package tasks;
+package tasks.task;
 
 
 import lombok.AllArgsConstructor;
