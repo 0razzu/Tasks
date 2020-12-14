@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -21,8 +22,18 @@ public class MultiTask implements Task {
     }
     
     
-    public void addTask(SimpleTask task) {
+    public void addTask(Task task) {
         tasks.add(task);
+    }
+    
+    
+    public void addTasks(List<Task> tasks) {
+        this.tasks.addAll(tasks);
+    }
+    
+    
+    public void addTasks(Task... tasks) {
+        addTasks(Arrays.asList(tasks));
     }
     
     
