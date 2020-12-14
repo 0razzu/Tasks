@@ -33,5 +33,7 @@ public class TestMultiTask {
     @Test
     void testGetLeadTime() {
         assertEquals(10, task.getLeadTime());
+        ((SimpleTask) task.getTasks().get(1)).setLeadTime(3);
+        assertEquals(12, task.getLeadTime());
     }
 }
